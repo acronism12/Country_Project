@@ -13,5 +13,22 @@ class CountriesTest < MiniTest::Test
     assert_equal(247, names.length)
   end
 
+  def test_select_random_countries
+    chosen_countries = select_random_countries(@countries)
+    assert_equal(4, chosen_countries.length)
+  end
+
+# cant get this test to work!
+  def test_display_countries
+    display = display_countries(["Scotland", "England", "Ireland", "Wales"])
+    result = ["1: Scotland", "2: England", "3: Ireland", "4: Wales"]
+    assert_equal(result,display)
+  end
+
+  def test_find_country_with_largest_population
+    largest_population = find_country_with_largest_population(@countries)
+    assert_equal("China",largest_population)
+
+  end
 
 end

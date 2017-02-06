@@ -1,4 +1,4 @@
-require_relative("countries_data")
+# require_relative("countries_data")
 
 def country_names(countries_data)
   names = []
@@ -18,29 +18,39 @@ def select_random_countries(countries_data)
   return chosen_countries
 end
 
-def display_random_countries(names)
+def display_countries(names)
   counter = 1
   for name in names
-    puts counter.to_s + ": " + name
+    result = puts counter.to_s + ": " + name
     counter += 1
   end
+  return result
 end
 
-def country_largest_population(countries_data)
-  country_names = []
-  country_populations = []
-  #display four country names
+# def country_largest_population(countries_data)
+#   country_names = []
+#   country_populations = []
+#   #display four country names
+#
+#
+#   #find answer
+#   for country in countries_data
+#     if chosen_countries["population"]
+#     chosen_country_names.push(select_random_countries(COUNTRIES)["name"])
+#   end
+# end
+# end
 
+ def find_country_with_largest_population(countries_data)
+  # for country in countries
+  countries_by_population = Array.new
+  countries_by_population = countries_data.sort_by{ |k| k["population"]}
+  largest_population = countries_by_population.last["population"]
+  country_name = countries_by_population.last["name"]
+  return country_name
+    #sort by population descending, take first country in array
 
-  #find answer
-  for country in countries_data
-    if chosen_countries["population"]
-    chosen_country_names.push(select_random_countries(COUNTRIES)["name"])
-  end
-end
-end
-
-
+ end
 
 #puts select_random_countries(COUNTRIES)
 
