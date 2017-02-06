@@ -26,8 +26,21 @@ class CountriesTest < MiniTest::Test
   end
 
   def test_find_country_with_largest_population
-    largest_population = find_country_with_largest_population(@countries)
-    assert_equal("China",largest_population)
+    country_name = find_country_with_largest_population(@countries)
+    assert_equal("China",country_name)
+
+  end
+
+#cant get this to work either
+  def test_display_result
+    answer = display_result(1, 1371590000, ["China", "Scotland", "England", "Belize"])
+    assert_equal("Right! The correct answer is: 1371590000", answer)
+
+  end
+
+  def test_find_country_with_largest_area
+    country_name = find_country_with_largest_area(@countries)
+    assert_equal("Russia",country_name)
 
   end
 
